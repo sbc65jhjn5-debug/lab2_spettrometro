@@ -39,7 +39,7 @@ if __name__ == "__main__":
     for n, deg, sig in zip (n_vals, [deg_0, deg_1_mean, deg_2_mean, deg_3_mean, deg_4_mean], [0, sigma_1, sigma_2, sigma_3, sigma_4]):
         print (f"n = {n}, deg = {deg:.3f} ± {sig:.3f}")
 
-    lambda_mean = np.mean ([588.995, 589.594])
+    lambda_mean = np.mean ([588.995, 589.594]) # nanometri
 
     d_1 = d (np.radians (deg_1_mean), 1, lambda_mean)
     sigma_d_1 = sigma_d (np.radians (deg_1_mean), np.radians (sigma_1), 1, lambda_mean)

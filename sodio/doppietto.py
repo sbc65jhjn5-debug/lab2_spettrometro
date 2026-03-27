@@ -55,3 +55,9 @@ if __name__ == "__main__":
     print ("\nValori d e deviazioni standard:\n")
     for n, d_val, sig in zip (n_vals[1:], [d_1, d_2, d_3, d_4], [sigma_d_1, sigma_d_2, sigma_d_3, sigma_d_4]):
         print (f"n = {n}, d = {d_val:.3f} ± {sig:.3f}")
+
+    # NB per il calcolo di d, usiamo la media pesata
+    d_mean = np.average ([d_1, d_2, d_3, d_4], weights = [1/sigma_d_1**2, 1/sigma_d_2**2, 1/sigma_d_3**2, 1/sigma_d_4**2])
+    sigma_d_mean = np.sqrt (1 / (1/sigma_d_1**2 + 1/sigma_d_2**2 + 1/sigma_d_3**2 + 1/sigma_d_4**2))
+
+    print (f"\nValore medio di d: {d_mean:.3f} ± {sigma_d_mean:.3f}\n")

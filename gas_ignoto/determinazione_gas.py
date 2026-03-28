@@ -9,7 +9,8 @@ from scipy.stats import chi2
 # https://physics.nist.gov/PhysRefData/ASD/Html/lineshelp.html
 # DOPO FINISCO DI CONTROLLARLE
 # forse è meglio se prendiamo tutti i dati dallo stesso sito? ma non dovrebbe cambiare in realtà...
-# COMUNQUE SICURO PIUTTOSTO CHE IL CHI QUADRO MEGLIO IL POWER TEST
+# COMUNQUE C'è UN NUOVO PROGRAMMA FATTO FEATURING CODEX/CHAT CHE SPINGE CON IL POWER TEST
+# (anche se devo finire di sistemarlo ehehe dopo faccio tutto tanto ho già una mezza idea)
 
 def compare (gas, ignoto, sigma):
 

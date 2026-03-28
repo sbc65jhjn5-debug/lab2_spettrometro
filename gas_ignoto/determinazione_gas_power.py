@@ -4,22 +4,16 @@ from pathlib import Path
 # COMMENTO: (sono vale)
 
 # Ho fatto dei toy experiments misurare il tasso di falsi positivi e falsi negativi:
-#   - si suppone reale un gas, e si creano dati fittizi con le righe di quel gas + rumore, e si vede se il test lo riconosce correttamente
-#   - tutti i dati sono poi riportati in tabelle e grafici (dentro gas_ignoto/output_power_test) che si possono usare per la relazione, e che mostrano come il test si comporta al variare di soglia, intensità delle righe, eccetera.
+#   - si suppone reale un gas, e si creano dati fittizi con le righe di quel gas + rumore, 
+#     e si vede se il test lo riconosce correttamente
+#   - tutti i dati sono poi riportati in tabelle e grafici (dentro gas_ignoto/output_power_test) 
+#     che si possono usare per la relazione, e che mostrano come il test si comporta al variare di soglia, 
+#     intensità delle righe, eccetera.
 
 # OSS:
 #      - Con il reticolo, il gas viene Elio ma anche altri gas hanno compatibilità notevole, soprattutto lo Xenon
-#      - Il power test mostra che spesso, se il gas reale è Elio, lo spettro mostra corrispondenze con quello dello Xenon
-#        (ciò potrebbe spiegare come mai lo Xenon ha un valore di matching così alto)
-
-# In RELAZIONE possiamo scrivere qualcosa del tipo:
-# Sebbene il confronto automatico basato sul matching delle lunghezze d’onda favorisca 
-# in alcuni casi lo xenon, questo risultato va interpretato con cautela. 
-# L’osservazione qualitativa dello spettro, in particolare la forte intensità della riga gialla e 
-# la debolezza della componente rossa, è più compatibile con l’elio. 
-# È quindi probabile che il test statistico risenta della presenza di alcune righe ambigue 
-# o poco affidabili e del fatto che il criterio adottato privilegi la sola vicinanza 
-# in lunghezza d’onda rispetto alla struttura complessiva dello spettro.
+#      - Il power test mostra che spesso, se il gas reale è Elio, lo spettro mostra corrispondenze 
+#        con quello dello Xenon (ciò potrebbe spiegare come mai lo Xenon ha un valore di matching così alto)
 
 # per commento più approfondito su ogni gas, vedere il documento latex :))
 

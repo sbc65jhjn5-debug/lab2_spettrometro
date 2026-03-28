@@ -8,8 +8,9 @@ from pathlib import Path
 #   - tutti i dati sono poi riportati in tabelle e grafici (dentro gas_ignoto/output_power_test) che si possono usare per la relazione, e che mostrano come il test si comporta al variare di soglia, intensità delle righe, eccetera.
 
 # OSS:
-#      - Con il reticolo, il gas sembrerebbe essere Xenon, mentre con il prisma Elio
+#      - Con il reticolo, il gas viene Elio ma anche altri gas hanno compatibilità notevole, soprattutto lo Xenon
 #      - Il power test mostra che spesso, se il gas reale è Elio, lo spettro mostra corrispondenze con quello dello Xenon
+#        (ciò potrebbe spiegare come mai lo Xenon ha un valore di matching così alto)
 
 # In RELAZIONE possiamo scrivere qualcosa del tipo:
 # Sebbene il confronto automatico basato sul matching delle lunghezze d’onda favorisca 

@@ -52,9 +52,7 @@ OBSERVED_DATA = {
 }
 
 
-# Qui puoi mettere direttamente le righe prese da NIST che vuoi usare davvero.
-# Se cambi queste liste, il resto del programma si aggiorna da solo.
-# "source" e "notes" servono solo come promemoria per la relazione.
+# Le linee sono prese da NIST ASD (Atomic Spectra Database) e filtrate per intensità relativa
 GAS_LIBRARY = {
     "Elio": {
         "source": "NIST ASD, righe visibili piu' intense usate in laboratorio",
@@ -125,7 +123,7 @@ GAS_LIBRARY = {
     },
     "Neon": {
         "source": "NIST ASD, righe intense nel visibile",
-        "notes": "Neon tende a vincere facilmente se gli lasci molte righe rosse e arancioni vicine alle tue lambda misurate.",
+        "notes": "Neon tende a vincere facilmente se gli si lascia molte righe rosse e arancioni vicine alle lambda misurate.",
         "min_relative_intensity": {
             "prisma": 0.42,
             "reticolo": 0.40,
@@ -164,7 +162,7 @@ GAS_LIBRARY = {
     },
     "Kripton": {
         "source": "NIST ASD, righe nel blu-verde-rosso usate per confronto",
-        "notes": "Anche qui puoi restringere ulteriormente se vuoi un test piu' conservativo.",
+        "notes": "Anche qui si potrebbe restringere ulteriormente per un test piu' conservativo.",
         "min_relative_intensity": {
             "prisma": 0.26,
             "reticolo": 0.24,
@@ -289,10 +287,10 @@ def chi2_distance(observed, theory, sigma, weights=None):
 
 
 def best_unique_match(observed, sigma, theory_lines, weights=None):
-    """
-    Matching 1-a-1 ottimo tra righe osservate e teoriche.
-    Ogni riga teorica puo' essere usata al massimo una volta.
-    """
+    
+    # Matching 1-a-1 tra righe osservate e teoriche.
+    # Ogni riga teorica puo' essere usata al massimo una volta.
+
     observed = np.asarray(observed, dtype=float)
     sigma = np.asarray(sigma, dtype=float)
     sigma_eff = effective_sigma(sigma, weights)
@@ -467,7 +465,7 @@ def monte_carlo_power(n_sim=N_MONTE_CARLO, seed=RNG_SEED):
 
 
 def print_nist_library():
-    print("=== LIBRERIA RIGHE TEORICHE ===\n")
+    print("=== Libreria Linee Teoriche ===\n")
     for gas_name in gas_names():
         print(f"{gas_name}:")
         print(f"  fonte : {GAS_LIBRARY[gas_name]['source']}")
@@ -495,7 +493,7 @@ def print_dataset_report(dataset_name):
         weights=dataset.get("weights"),
     )
 
-    print(f"\n=== RISULTATI {dataset_name.upper()} ===")
+    print(f"\n=== Risultati {dataset_name.upper()} ===")
     print(f"Righe osservate: {np.round(dataset['wavelengths'], 3)} nm")
     print(f"Incertezze     : {np.round(dataset['sigma'], 3)} nm\n")
     print(f"Pesi usati     : {np.round(dataset.get('weights', np.ones_like(dataset['sigma'])), 3)}")
@@ -516,7 +514,7 @@ def print_dataset_report(dataset_name):
 def print_combined_report():
     combined = combined_ranking()
 
-    print("\n=== RISULTATI COMBINATI PRISMA + RETICOLO ===\n")
+    print("\n=== RIisultati combinati PRISMA + RETICOLO ===\n")
     for item in combined:
         print(
             f"{item['gas']:8s}  chi^2_tot = {item['chi2_tot']:10.3f}   "
@@ -534,7 +532,7 @@ def print_combined_report():
 
 def print_power_report(power, confusion, n_sim):
     names = gas_names()
-    print("\n=== POWER TEST MONTE CARLO ===")
+    print("\n=== Power Test Monte Carlo ===")
     print(f"Numero simulazioni per gas: {n_sim}\n")
 
     for gas_name in names:
@@ -563,7 +561,9 @@ def save_ranking_plot(dataset_name, ranking):
     values = [item["chi2"] for item in ranking if np.isfinite(item["chi2"])]
 
     fig, ax = plt.subplots(figsize=(8, 4.8))
+
     colors = ["#0077b6" if idx == 0 else "#90be6d" for idx in range(len(gases))]
+
     ax.bar(gases, values, color=colors, edgecolor="#1f2937")
     ax.set_title(f"Ranking dei gas - {dataset_name}")
     ax.set_ylabel(r"$\chi^2$")
@@ -683,6 +683,7 @@ def try_save_plot(plot_function, *args):
 
 
 def main():
+    
     print_nist_library()
 
     plot_paths = []

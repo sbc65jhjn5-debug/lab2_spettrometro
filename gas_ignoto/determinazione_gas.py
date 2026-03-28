@@ -4,10 +4,11 @@ from scipy.stats import chi2
 
 # CIAO, SONO VALE
 # DEVO FINIRE DI CONTROLLARE COME MAI IL CHI QUADRO CON IL RETICOLO FACCIA CAGARE CON L'ELIO,
-# MENTRE IL GAS è PALESEMENTE ELIO... PRESUMO CI SIA UN ERRORE NEI DATI DELLE LUNGHEZZE D'ONDA...
-# IO LE HO PRESE DAL SITO:
+# PRESUMO CI SIA UN ERRORE NEI DATI DELLE LUNGHEZZE D'ONDA... o magari non è Elio, BAH...
+# IO HO PRESO I DATI DAL SITO (per viola e alcuni blu, mentre le altre sono dal sito dell'altra volta)
 # https://physics.nist.gov/PhysRefData/ASD/Html/lineshelp.html
 # DOPO FINISCO DI CONTROLLARLE
+# forse è meglio se prendiamo tutti i dati dallo stesso sito? ma non dovrebbe cambiare in realtà...
 # COMUNQUE SICURO PIUTTOSTO CHE IL CHI QUADRO MEGLIO IL POWER TEST
 
 def compare (gas, ignoto, sigma):
@@ -25,13 +26,13 @@ if __name__ == "__main__":
 
     # Con prisma, abbiamo ottenuto i seguenti valori di λ (con relative deviazioni standard):
 
-    rosso_ignoto_p = 780.5115
+    rosso_ignoto_p = 780.5115 # sus... oltre lo spettro visibile...
     sigma_rosso_ignoto_p = 335.8858
-    giallo_ignoto_p = 677.5714
+    giallo_ignoto_p = 677.5714 # sus... nel rosso
     sigma_giallo_ignoto_p = 225.9965
-    verde_ignoto_p = 603.7090
+    verde_ignoto_p = 603.7090 # sus... nel giallo
     sigma_verde_ignoto_p = 169.9630
-    blu_ignoto_p = 451.7410
+    blu_ignoto_p = 451.7410 # ok, nel blu
     sigma_blu_ignoto_p = 92.0307
 
     # Con reticolo, abbiamo ottenuto i seguenti valori di λ (con relative deviazioni standard):
@@ -48,6 +49,10 @@ if __name__ == "__main__":
     sigma_viola1_ignoto_r = 36.704
     viola2_ignoto_r = 401.237 # leggermente più intenso del viola1
     sigma_viola2_ignoto_r = 37.473
+
+    # oss: giallo, verde, viola1, viola2 sono nei rispettivi spettri,
+    #      mentre il rosso era sottilissimo (quindi non lo abbiamo preso),
+    #      il blu è leggermente più verso il viola rispetto ai valori teorici, ma potrebbe starci perché erano praticamente attaccati
 
     # Procediamo al confronto con gas nobili e co2, usando i valori di λ ottenuti con il prisma e con il reticolo (con relative deviazioni standard):
 

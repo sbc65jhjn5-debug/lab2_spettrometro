@@ -451,6 +451,7 @@ def monte_carlo_power(n_sim=N_MONTE_CARLO, seed=RNG_SEED):
                 sample[dataset_name] = {
                     "wavelengths": payload["wavelengths"] + rng.normal(0.0, payload["sigma"]),
                     "sigma": payload["sigma"],
+                    "weights": payload.get("weights"),
                 }
             predicted_gas, _ = classify_sample(sample)
             confusion[true_gas][predicted_gas] += 1

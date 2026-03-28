@@ -7,8 +7,7 @@ from pathlib import Path
 #   - si suppone reale un gas, e si creano dati fittizi con le righe di quel gas + rumore, 
 #     e si vede se il test lo riconosce correttamente
 #   - tutti i dati sono poi riportati in tabelle e grafici (dentro gas_ignoto/output_power_test) 
-#     che si possono usare per la relazione, e che mostrano come il test si comporta al variare di soglia, 
-#     intensità delle righe, eccetera.
+#     che mostrano come il test si comporta al variare di soglia, intensità delle righe, ecc.
 
 # OSS:
 #      - Con il reticolo, il gas viene Elio ma anche altri gas hanno compatibilità notevole, soprattutto lo Xenon
@@ -683,7 +682,7 @@ def try_save_plot(plot_function, *args):
 
 
 def main():
-    
+
     print_nist_library()
 
     plot_paths = []

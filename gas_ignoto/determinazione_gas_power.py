@@ -77,8 +77,11 @@ GAS_LIBRARY = {
             ],
             "reticolo": [
                 {"wavelength": 388.9, "intensity": 0.30},
+                {"wavelength": 396.5, "intensity": 0.16},
                 {"wavelength": 402.6, "intensity": 0.34},
                 {"wavelength": 447.1, "intensity": 0.32},
+                {"wavelength": 471.3, "intensity": 0.18},
+                {"wavelength": 492.2, "intensity": 0.16},
                 {"wavelength": 501.6, "intensity": 0.24},
                 {"wavelength": 587.6, "intensity": 1.00},
                 {"wavelength": 667.8, "intensity": 0.40},

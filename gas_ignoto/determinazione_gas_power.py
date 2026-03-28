@@ -1,6 +1,25 @@
 import os
 from pathlib import Path
 
+# COMMENTO: (sono vale)
+
+# Ho fatto dei toy experiments misurare il tasso di falsi positivi e falsi negativi:
+#   - si suppone reale un gas, e si creano dati fittizi con le righe di quel gas + rumore, e si vede se il test lo riconosce correttamente
+#   - tutti i dati sono poi riportati in tabelle e grafici (dentro gas_ignoto/output_power_test) che si possono usare per la relazione, e che mostrano come il test si comporta al variare di soglia, intensità delle righe, eccetera.
+
+# OSS:
+#      - Con il reticolo, il gas sembrerebbe essere Xenon, mentre con il prisma Elio
+#      - Il power test mostra che spesso, se il gas reale è Elio, lo spettro mostra corrispondenze con quello dello Xenon
+
+# In RELAZIONE possiamo scrivere qualcosa del tipo:
+# Sebbene il confronto automatico basato sul matching delle lunghezze d’onda favorisca 
+# in alcuni casi lo xenon, questo risultato va interpretato con cautela. 
+# L’osservazione qualitativa dello spettro, in particolare la forte intensità della riga gialla e 
+# la debolezza della componente rossa, è più compatibile con l’elio. 
+# È quindi probabile che il test statistico risenta della presenza di alcune righe ambigue 
+# o poco affidabili e del fatto che il criterio adottato privilegi la sola vicinanza 
+# in lunghezza d’onda rispetto alla struttura complessiva dello spettro.
+
 
 LOCAL_MPL_DIR = Path(__file__).resolve().parent / ".mplconfig"
 LOCAL_MPL_DIR.mkdir(exist_ok=True)
@@ -28,8 +47,8 @@ OBSERVED_DATA = {
     },
     "reticolo": {
         "labels": ["giallo", "verde", "blu1", "blu2", "viola1", "viola2"],
-        "wavelengths": np.array([576.448, 550.037, 438.351, 437.833, 397.412, 401.237]),
-        "sigma": np.array([28.137, 30.003, 30.790, 32.882, 36.704, 37.473]),
+        "wavelengths": np.array([576.522, 550.105, 438.405, 437.888, 397.461, 401.287]),
+        "sigma": np.array([28.140, 30.007, 30.794, 32.887, 36.709, 37.478]),
         "weights": np.array([1.50, 0.75, 1.00, 0.90, 1.00, 1.05]),
         "notes": "Giallo piu' affidabile; la riga verde vicino a 550 nm e' sospetta e viene pesata meno.",
     },

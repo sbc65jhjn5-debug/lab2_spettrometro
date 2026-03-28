@@ -46,6 +46,7 @@ if __name__ == "__main__":
 
     d_2 = d (np.radians (deg_2_mean), 2, lambda_mean)
     sigma_d_2 = sigma_d (np.radians (deg_2_mean), np.radians (sigma_2), 2, lambda_mean)
+    
     d_3 = d (np.radians (deg_3_mean), 3, lambda_mean)
     sigma_d_3 = sigma_d (np.radians (deg_3_mean), np.radians (sigma_3), 3, lambda_mean)
 

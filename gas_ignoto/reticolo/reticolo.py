@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     deg_verde = np.array ([90.5 - 83.2, 90.5 - 81, 90.5 - 81.6167, 101 - 90.5, 101.12 - 90.5, 100.87 - 90.5]) # intenso
 
-    deg_giallo = np.array ([90.5 - 82.5832, 90.5 - 80.5, 90.5 - 81.1667, 101.566 - 90.5, 101.33 - 90.5, 101.3 - 90.5]) # intenso
+    deg_giallo = np.array ([90.5 - 82.583, 90.5 - 80.5, 90.5 - 81.1667, 101.566 - 90.5, 101.33 - 90.5, 101.3 - 90.5]) # intenso
 
     # medie
     deg_viola_1_mean = np.mean (deg_viola_1)
@@ -49,8 +49,8 @@ if __name__ == "__main__":
 
     # Calcolo lambda e incertezze
 
-    d = 3322.585 # distanza tra le fenditure in nm (ricavata da "mercurio/doppietto.py")
-    sigma_d = 10.917 # deviazione standard di d (ricavata da "mercurio/doppietto.py")
+    d = 3323 # distanza tra le fenditure in nm (ricavata da "sodio/doppietto.py")
+    sigma_d = 11 # deviazione standard di d (ricavata da "sodio/doppietto.py")
     n = 1 # ordine del reticolo
 
     lambda_viola_1, lambda_viola_1_sigma = lamb (np.radians (deg_viola_1_mean), np.radians (deg_viola_1_sigma), d, sigma_d, n)

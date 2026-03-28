@@ -59,14 +59,6 @@ if __name__ == "__main__" :
     err_b = m.errors['b']
 
     # Fit - lambda misurate con il reticolo:
-
-    def dCauchy_dx(x, b):
-        return -2 * b / x**3
-
-    def chi2_con_sigma_lamb (a, b, lamb, sigma_lamb, n, sigma_n) :
-        y_fit = Cauchy_for_exp(lamb, a, b)
-        sigma_eff = np.sqrt([sigma_n**2 + (dCauchy_dx(l, b) * sigma_l)**2 for l, sigma_l in zip(lamb, sigma_lamb)])
-        return np.sum(((n - y_fit) / sigma_eff)**2)
     
     chi2 = lambda a, b: chi2_con_sigma_lamb(a, b, lamb_exp, lamb_exp_sigma, n, sigma_n)
 
@@ -127,16 +119,17 @@ if __name__ == "__main__" :
 
     x_axis_misurate = np.linspace(np.min(lamb_exp) - 20, np.max(lamb_exp) + 20, 200)
 
-    ax.errorbar(
-        lamb_exp,
-        n,
-        xerr=lamb_exp_sigma,
-        yerr=sigma_n,
-        linestyle="None",
-        marker="o",
-        capsize=4,
-        color="navy",
-    )
+    for lamb_i, err_lamb_i, n_i, err_n_i, lab, c in zip (lamb_exp, lamb_exp_sigma, n, sigma_n, labels, colors) :
+        ax.errorbar (lamb_i,
+                     n_i,
+                     xerr = err_lamb_i,
+                     yerr = err_n_i,
+                     linestyle = 'None',
+                     label = lab,
+                     marker = 'o',
+                     capsize = 4,
+                     color = c
+                    )
 
     ax.plot(
         x_axis_misurate,

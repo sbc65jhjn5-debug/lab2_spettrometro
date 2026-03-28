@@ -4,8 +4,10 @@ from iminuit import Minuit
 from iminuit.cost import LeastSquares
 from scipy.stats import chi2
 
-def lamb (theta, d, n):
-    return d * np.sin (theta) / n
+def lamb (theta, sigma_theta, d, sigma_d, n):
+    l = d * np.sin (theta) / n
+    sigma_l = np.sqrt ((np.sin (theta) / n * sigma_d)**2 + (d * np.cos (theta) / n * sigma_theta)**2)
+    return l, sigma_l
 
 if __name__ == "__main__":
 
@@ -44,3 +46,20 @@ if __name__ == "__main__":
     print ("\nMedie e incertezze sui gradi:\n")
     for color, deg_mean, deg_sigma in zip (colors, [deg_viola_1_mean, deg_viola_2_mean, deg_blu_1_mean, deg_blu_2_mean, deg_verde_mean, deg_giallo_mean], [deg_viola_1_sigma, deg_viola_2_sigma, deg_blu_1_sigma, deg_blu_2_sigma, deg_verde_sigma, deg_giallo_sigma]):
         print (f"{color}: {deg_mean:.4f} ± {deg_sigma:.4f} gradi")
+
+    # Calcolo lambda e incertezze
+
+    d = 3322.585 # distanza tra le fenditure in nm (ricavata da "mercurio/doppietto.py")
+    sigma_d = 10.917 # deviazione standard di d (ricavata da "mercurio/doppietto.py")
+    n = 1 # ordine del reticolo
+
+    lambda_viola_1, lambda_viola_1_sigma = lamb (np.radians (deg_viola_1_mean), np.radians (deg_viola_1_sigma), d, sigma_d, n)
+    lambda_viola_2, lambda_viola_2_sigma = lamb (np.radians (deg_viola_2_mean), np.radians (deg_viola_2_sigma), d, sigma_d, n)
+    lambda_blu_1, lambda_blu_1_sigma = lamb (np.radians (deg_blu_1_mean), np.radians (deg_blu_1_sigma), d, sigma_d, n)
+    lambda_blu_2, lambda_blu_2_sigma = lamb (np.radians (deg_blu_2_mean), np.radians (deg_blu_2_sigma), d, sigma_d, n)
+    lambda_verde, lambda_verde_sigma = lamb (np.radians (deg_verde_mean), np.radians (deg_verde_sigma), d, sigma_d, n)
+    lambda_giallo, lambda_giallo_sigma = lamb (np.radians (deg_giallo_mean), np.radians (deg_giallo_sigma), d, sigma_d, n)
+
+    print ("\nValori di λ e deviazioni standard:\n")
+    for color, val_lambda, sigma_lambda in zip (colors, [lambda_viola_1, lambda_viola_2, lambda_blu_1, lambda_blu_2, lambda_verde, lambda_giallo], [lambda_viola_1_sigma, lambda_viola_2_sigma, lambda_blu_1_sigma, lambda_blu_2_sigma, lambda_verde_sigma, lambda_giallo_sigma]):
+        print (f"λ {color} = {val_lambda:.3f} ± {sigma_lambda:.3f} nm")

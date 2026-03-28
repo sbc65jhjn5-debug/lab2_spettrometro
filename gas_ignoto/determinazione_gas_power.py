@@ -21,6 +21,8 @@ from pathlib import Path
 # o poco affidabili e del fatto che il criterio adottato privilegi la sola vicinanza 
 # in lunghezza d’onda rispetto alla struttura complessiva dello spettro.
 
+# per commento più approfondito su ogni gas, vedere il documento latex :))
+
 
 LOCAL_MPL_DIR = Path(__file__).resolve().parent / ".mplconfig"
 LOCAL_MPL_DIR.mkdir(exist_ok=True)

@@ -31,7 +31,7 @@ if __name__ == "__main__" :
 
     n = np.array([1.63597, 1.61930, 1.62064]) #blu verde giallo
     sigma_n = np.array([0.004, 0.004, 0.004]) #blu verde giallo
-    lamb_theoretical = np.array([435.8328, 546.0735, 576.9598]) #blu verde giallo
+    lamb_theoretical = np.array([435.8328, 546.0735, 567.7105]) #blu verde giallo
 
     #oss: λ_blu/violetto = [365.0153, 365.4836, 366.3279, 404.6563] (violetto); [433.9223, 434.7494, !435.8328!] (blu)
     #     λ_verde = [546.0735]

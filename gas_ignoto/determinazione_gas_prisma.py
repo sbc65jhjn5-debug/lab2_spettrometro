@@ -37,9 +37,13 @@ if __name__ == "__main__":
     # Colori elio
 
     rosso_elio = np.mean ([706.5, 728.1])
+    print (f"Rosso elio: {rosso_elio:.1f} nm")  
     giallo_elio = np.mean ([587.6, 667.8])
+    print (f"Giallo elio: {giallo_elio:.1f} nm")
     verde_elio = 501.6
+    print (f"Verde elio: {verde_elio:.1f} nm")
     blu_elio = 447.1
+    print (f"Blu elio: {blu_elio:.1f} nm")  
 
     colors_elio_p = [rosso_elio, giallo_elio, verde_elio, blu_elio]
  
@@ -47,9 +51,13 @@ if __name__ == "__main__":
     # Colori argon
 
     rosso_argon = np.mean ([912.3, 965.8])
+    print (f"Rosso argon: {rosso_argon:.1f} nm")
     giallo_argon = np.mean ([750.4, 763.5, 794.8, 800.6, 801.5, 810.4, 811.5])
+    print (f"Giallo argon: {giallo_argon:.1f} nm")
     verde_argon = np.mean ([696.5, 706.7])
+    print (f"Verde argon: {verde_argon:.1f} nm")
     blu_argon = np.mean ([434.8, 461.0, 488.0, 472.7, 476.7, 480.6, 487.9])
+    print (f"Blu argon: {blu_argon:.1f} nm")
 
     colors_argon_p = [rosso_argon, giallo_argon, verde_argon, blu_argon]
 
@@ -57,9 +65,13 @@ if __name__ == "__main__":
     # Colori neon
 
     rosso_neon = np.mean ([603, 607.4, 614.3, 616.4, 621.7, 626.7, 638.3, 640.2, 650.7, 660, 693, 703.2, 717.4, 724.5])
+    print (f"Rosso neon: {rosso_neon:.1f} nm")
     giallo_neon = 585.3
+    print (f"Giallo neon: {giallo_neon:.1f} nm")
     verde_neon = np.mean ([501.6, 540.1])
+    print (f"Verde neon: {verde_neon:.1f} nm")
     blu_neon = 450.1 
+    print (f"Blu neon: {blu_neon:.1f} nm")
 
     colors_neon_p = [rosso_neon, giallo_neon, verde_neon, blu_neon]
 
@@ -67,9 +79,13 @@ if __name__ == "__main__":
     # Colori Kripton
 
     rosso__kripton = np.mean ([642.0, 729, 740.7, 760.2])
+    print (f"Rosso kripton: {rosso__kripton:.1f} nm")
     giallo_kripton = 0
+    print (f"Giallo kripton: {giallo_kripton:.1f} nm")
     verde_kripton = np.mean ([557, 587.1])
+    print (f"Verde kripton: {verde_kripton:.1f} nm")
     blu_kripton = np.mean ([435.6, 461.9, 465.9, 473.9, 476.6, 483.2, 484.7])
+    print (f"Blu kripton: {blu_kripton:.1f} nm")
 
     colors_kripton_p = [rosso__kripton, giallo_kripton, verde_kripton, blu_kripton]
     
@@ -77,19 +93,28 @@ if __name__ == "__main__":
     # Colori Xenon
 
     rosso_xenon = 699.1
+    print (f"Rosso xenon: {rosso_xenon:.1f} nm")
     giallo_xenon = np.mean ([597.7, 605.1, 609.8])
+    print (f"Giallo xenon: {giallo_xenon:.1f} nm")
     verde_xenon = np.mean ([529.2, 541.9])
+    print (f"Verde xenon: {verde_xenon:.1f} nm")
     blu_xenon = 473.4 # più intenso, OK
+    print (f"Blu xenon: {blu_xenon:.1f} nm")
 
     colors_xenon_p = [rosso_xenon, giallo_xenon, verde_xenon, blu_xenon]
     
     #Co2
 
     rosso_co2 = 0
+    print (f"Rosso CO2: {rosso_co2:.1f} nm")
     giallo_co2 = 0
+    print (f"Giallo CO2: {giallo_co2:.1f} nm")
     verde_co2 = 0
+    print (f"Verde CO2: {verde_co2:.1f} nm")
     blu_co2 = 0
+    print (f"Blu CO2: {blu_co2:.1f} nm")
     viola_co2 = 0
+    print (f"Viola CO2: {viola_co2:.1f} nm")
 
     colors_co2_p = [rosso_co2, giallo_co2, verde_co2, blu_co2]
 

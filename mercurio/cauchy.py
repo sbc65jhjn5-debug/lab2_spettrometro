@@ -33,9 +33,10 @@ if __name__ == "__main__" :
     sigma_n = np.array([0.004, 0.004, 0.004]) #blu verde giallo
     lamb_theoretical = np.array([435.8328, 546.0735, 567.7105]) #blu verde giallo
 
-    #oss: λ_blu/violetto = [365.0153, 365.4836, 366.3279, 404.6563] (violetto); [433.9223, 434.7494, !435.8328!] (blu)
+    # oss: λ_blu/violetto = [365.0153, 365.4836, 366.3279, 404.6563] (violetto); [433.9223, 434.7494, !435.8328!] (blu)
     #     λ_verde = [546.0735]
-    #     λ_giallo = [!576.9598!, 579.0663]
+    #     λ_giallo = [576.9598, !567.7105!, 579.0663]
+    # Sito NIST regala gioie 
 
     lamb_exp = np.array([493.919, 605.436, np.average ([639.424, 644.924], weights = [2.940, 2.716])], dtype=float) #blu verde giallo (con λ_giallo media di quelle misurate con il reticolo)
     lamb_exp_sigma = np.array([7.325, 5.893, np.sqrt (1 / (1/2.940**2 + 1/2.716**2))], dtype=float)

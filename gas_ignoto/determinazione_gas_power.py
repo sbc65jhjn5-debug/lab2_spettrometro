@@ -647,7 +647,7 @@ def save_confusion_matrix_plot(confusion):
 
     fig, ax = plt.subplots(figsize=(7.6, 6.1))
     image = ax.imshow(normalized, cmap="YlOrRd", vmin=0.0, vmax=1.0)
-    ax.set_title("Matrice di confusione normalizzata")
+    ax.set_title("Tabella degli errori")
     ax.set_xticks(np.arange(len(names)), labels=names, rotation=30, ha="right")
     ax.set_yticks(np.arange(len(names)), labels=names)
     ax.set_xlabel("Gas stimato")
